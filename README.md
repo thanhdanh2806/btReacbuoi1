@@ -1,1 +1,5 @@
-# btReacbuoi1
+- tạo project : npx create-react-app "đặt tên"
+- khởi chạy :npm start
+- build project: npm run build
+- cài đặt thư viện : npm i `name` .VD: npm i axios
+- nếu không có thư mục node_modles: npm i
