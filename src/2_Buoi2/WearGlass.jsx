@@ -8,7 +8,7 @@ const WearGlass = ({ glass }) => {
   return (
     <div>
       <img
-        style={{ height: "5rem", width: "15rem", opacity: "0.8" }}
+        style={{ height: "4rem", width: "11rem", opacity: "0.8" }}
         src={glass.url}
         alt={glass.name}
       />
