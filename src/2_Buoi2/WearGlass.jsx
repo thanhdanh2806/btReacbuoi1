@@ -7,7 +7,11 @@ const WearGlass = ({ glass }) => {
 
   return (
     <div>
-      <img className="wear" src={glass.url} alt={glass.name} />
+      <img
+        style={{ height: "5rem", width: "15rem", opacity: "0.8" }}
+        src={glass.url}
+        alt={glass.name}
+      />
     </div>
   );
 };

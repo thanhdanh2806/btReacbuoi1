@@ -8,7 +8,7 @@ const GlassesList = ({ glasses, onSelect }) => {
         return (
           <div key={glass.id} className=" col-sm-2 mt-3 mb-3 center">
             <button
-              style={{ height: "7rem", width: "15rem" }}
+              style={{ height: "4rem", width: "15rem" }}
               className="text-center"
               onClick={() => onSelect(glass)}
             >

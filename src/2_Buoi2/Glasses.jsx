@@ -5,7 +5,6 @@ import GlassesList from "./GlassesList";
 // lấy dữ liệu từ đường dẫn file từ JSON
 import data from "./dataGlasses.json";
 import "./style.css";
-import WearGlass from "./WearGlass";
 
 export default class Glasses extends Component {
   constructor(props) {
@@ -18,6 +17,7 @@ export default class Glasses extends Component {
 
   handleSelect = (glasses) => {
     this.setState({ selectGlasses: glasses });
+    console.log(glasses);
   };
 
   render() {
@@ -29,14 +29,14 @@ export default class Glasses extends Component {
         >
           <h1>TRY GLASSES APP ONLINE</h1>
         </header>
-        <div className="container">
-          {/* truyền dữ liệu lấy từ file JSON vừa lấy truyền vào GlassList */}
-          <ModalGlass />
+        {/* hiện mẫu */}
+        <div className="container mt-5">
+          <ModalGlass glass={this.state.selectGlasses} />
         </div>
-        <div className="mt-5" style={{ width: "90%", margin: "auto" }}>
+        {/* hiện kính thử */}
+        <div className="mt-5" style={{ width: "80%", margin: "auto" }}>
           <GlassesList glasses={data} onSelect={this.handleSelect} />
         </div>
-        <WearGlass glass={this.state.selectGlasses} />
       </div>
     );
   }
