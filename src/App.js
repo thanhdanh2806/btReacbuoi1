@@ -1,6 +1,5 @@
 // khai báo liên kết jsx
-
-import Features from "./1_Buoi1/Features";
+import Glasses from "./2_Buoi2/Glasses";
 
 // import logo from "./logo.svg";
 // import "./App.css";
@@ -11,7 +10,7 @@ function App() {
   // JSX : javascrip + XML- là một cú pháp đặt biệt cho phép viết html trong javascrip
   return (
     <div>
-      <Features />
+      <Glasses />
     </div>
   );
 }
