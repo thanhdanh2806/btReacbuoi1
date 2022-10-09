@@ -78,6 +78,7 @@ function Cart({ isOpen, onClose, bag, onChangeQuantity }) {
               </table>
             </div>
             <div className="modal-footer">
+              <button className="btn btn-success">Đặt hàng</button>
               <button
                 type="button"
                 className="btn btn-secondary"
