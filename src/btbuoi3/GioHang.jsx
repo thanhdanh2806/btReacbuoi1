@@ -1,44 +1,48 @@
 import React from "react";
 
-function GioHang({ isOpen, onClose, AddShoes, onChangeSoluong }) {
+function GioHang({ isOpen, onClose, GioHang, onChangeSoLuong }) {
   if (!isOpen) {
     return null;
   }
   return (
-    <>
+    <div>
       <div
         className="modal fade show d-block"
+        id="exampleModal"
         tabIndex={-1}
+        role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-lg">
+        <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
+              <h5 className="modal-title" id="exampleModalLabel">
                 Giỏ Hàng
-              </h1>
+              </h5>
               <button
                 type="button"
-                className="btn-close"
-                onClick={onClose}
+                className="close"
                 aria-label="Close"
-              />
+                onClick={onClose}
+              >
+                <span aria-hidden="true">×</span>
+              </button>
             </div>
             <div className="modal-body">
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Stt</th>
+                    <th>STT</th>
                     <th>Tên Sản Phẩm</th>
                     <th>Hình Ảnh</th>
-                    <th>Đơn Giá</th>
+                    <th>Giá</th>
                     <th>Số Lượng</th>
                     <th>Tổng Tiền</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {AddShoes.map((shoe, index) => (
+                  {GioHang.map((shoe, index) => (
                     <tr key={shoe.id}>
                       <td>{index + 1}</td>
                       <td>{shoe.name}</td>
@@ -46,34 +50,33 @@ function GioHang({ isOpen, onClose, AddShoes, onChangeSoluong }) {
                         <img
                           src={shoe.image}
                           alt={shoe.name}
-                          width="100px"
-                          height="80px"
+                          height="50px"
+                          width="50px"
                         />
                       </td>
-                      <td>{shoe.price}</td>
+                      <td>{shoe.price}$</td>
                       <td>
                         <button
                           className="btn btn-danger"
-                          onClick={() => onChangeSoluong(shoe.id, -1)}
+                          onClick={() => onChangeSoLuong(shoe.id, -1)}
                         >
                           -
                         </button>
-                        <span>{shoe.soluong}</span>
+                        <span className="mx-1">{shoe.soluong}</span>
                         <button
                           className="btn btn-success"
-                          onClick={() => onChangeSoluong(shoe.id, 1)}
+                          onClick={() => onChangeSoLuong(shoe.id, 1)}
                         >
                           +
                         </button>
                       </td>
-                      <td>{shoe.soluong * shoe.price}</td>
+                      <td>{shoe.soluong * shoe.price}$</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <div className="modal-footer">
-              <button className="btn btn-success">Đặt hàng</button>
               <button
                 type="button"
                 className="btn btn-secondary"
@@ -85,9 +88,10 @@ function GioHang({ isOpen, onClose, AddShoes, onChangeSoluong }) {
           </div>
         </div>
       </div>
-      {/* overlay */}
+
+      {/* overplay */}
       <div className="modal-backdrop fade show"></div>
-    </>
+    </div>
   );
 }
 

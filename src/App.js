@@ -1,8 +1,8 @@
-import Shoes from "./btbuoi3/Shoes";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ShoesMain from "./btbuoi3/ShoesMain";
 
 function App() {
-  return <Shoes />;
+  return <ShoesMain />;
 }
 
 export default App;
